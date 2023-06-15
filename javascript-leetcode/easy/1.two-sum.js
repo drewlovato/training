@@ -16,25 +16,21 @@ const target = 9
 const result = twoSum(nums, target)
 
 
-var twoSum = function(nums, target) {
-    nums = nums.map((v, i) => [i, v]);
+function twoSum (nums, target) {
+    const suitMap = new Map();
 
-    nums.sort((a, b) => a[1]- b[1]);
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        const suit = target - num;
 
-    let left = 0;
-    let right = nums.length -  1;
-    while(left < right) {
-        const sum = nums[left][1] + nums[right][1];
-        if (sum === target) {
-            return [nums[left][0], nums[right][0]];
-        } else if (sum < target) {
-            left++;
-        } else {
-            right--;
+        if (suitMap.has(num)) {
+            return [suitMap.get(num), i];
         }
+
+        suitMap.set(suit, i)
     }
 
-    return []; //If returned empty array no pair was found
+    return [];
 };
 // @lc code=end
 
