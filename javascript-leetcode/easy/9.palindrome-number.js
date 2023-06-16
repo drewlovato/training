@@ -9,22 +9,32 @@
  * @param {number} x
  * @return {boolean}
  */
-var isPalindrome = function(x) {
-    // x.map((v, i) => [i, v])
+function isPalindrome(x) {
+  // if string is null return bolean as false
+  if(x === 0) {
+    return true;
+  }
 
-    x.sort((a,b) => a[1] - b[1]);
 
-    let left = 0;
-    let right = x.length - 1;
-    while (left != right) {
-        return "This is not a palandrome";
-    } if (left = right ) {
-        left++
-    } if (right = left) {
-        right--
+  // if NOT false, take the string and split it into individual characters
+  const string = x.toString().split('');
+
+  // make pointer for either side of the new array(x) in order to compare them to eachother
+  let left = 0;
+  let right = string.length - 1;
+
+  while(left < right) {
+    if(string[left] != string[right]) {
+        return false;
     }
-    return "This is a palandrome"
+    // increment from both side until loop hits center of string
+    left++;
+    right --;
+    
+  }
 
-};
+  return true;
+}
+
 // @lc code=end
 
