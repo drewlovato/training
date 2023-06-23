@@ -11,27 +11,22 @@
  * @return {number[]}
  */
 
-// function twoSum (nums, target) {
-//     const suitMap = new Map();
+function twoSum (nums, target) {
+    const suitMap = new Map();
 
-//     for (let i = 0; i < nums.length; i++) {
-//         const num = nums[i];
-//         const suit = target - num;
+    for (let i = 0; i < nums.length; i++) {
+        const num = nums[i];
+        const suit = target - num;
 
-//         if (suitMap.has(num)) {
-//             return [suitMap.get(num), i];
-//         }
+        if (suitMap.has(num)) {
+            return [suitMap.get(num), i];
+        }
 
-//         suitMap.set(suit, i)
-//     }
+        suitMap.set(suit, i)
+    }
 
-//     return [];
-// };
-
-
-function twoSum(nums, target) {
-    
-}
+    return [];
+};
 // @lc code=end
 
 
